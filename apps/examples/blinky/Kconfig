@@ -1,0 +1,24 @@
+config EXAMPLES_BLINKY
+	tristate "\"Hello, BLINKY!\" example"
+	default n
+	---help---
+		Enable the \"Hello, Blinky!\" example
+
+if EXAMPLES_BLINKY
+
+config EXAMPLES_BLINKY_PROGNAME
+	string "blinky"
+	default "blinky"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+config EXAMPLES_BLINKY_PRIORITY
+	int "Hello task priority"
+	default 100
+
+config EXAMPLES_BLINKY_STACKSIZE
+	int "Hello stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+endif

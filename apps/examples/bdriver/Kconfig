@@ -1,0 +1,24 @@
+config EXAMPLES_BDRIVER
+	tristate "\"BOARD_DRIVER!\" example"
+	default n
+	---help---
+		Enable the \"Hello, BOARD_DRIVER!\" example
+
+if EXAMPLES_BDRIVER
+
+config EXAMPLES_BDRIVER_PROGNAME
+	string "BOARD_DRIVER"
+	default "BOARD_DRIVER"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+config EXAMPLES_BDRIVER_PRIORITY
+	int "Hello task priority"
+	default 100
+
+config EXAMPLES_BDRIVER_STACKSIZE
+	int "BOARD_DRIVER stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+endif
